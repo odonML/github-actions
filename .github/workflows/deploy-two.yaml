@@ -1,0 +1,19 @@
+name: "deploy secuencial en github"
+
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hola mundo
+        run: echo "Hola mundo"
+
+  second-job:
+    need: first_job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hola mundo
+        run: echo "Hola mundo segundo"
