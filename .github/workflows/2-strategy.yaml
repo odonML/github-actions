@@ -1,0 +1,16 @@
+name: "Deploy github actions"
+
+on: push
+
+jobs:
+  first_job:
+    strategy:
+      matrix:
+        message: ["hola", "mundo", "xd"]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: strategy matrix
+        run: echo ${{matrix.message}}
+#

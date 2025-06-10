@@ -1,6 +1,8 @@
 name: "deploy secuencial en github"
 
-on: push
+on:
+  push:
+    branches: ["main-one"]
 
 jobs:
   first_job:
