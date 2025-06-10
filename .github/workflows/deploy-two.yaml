@@ -28,3 +28,13 @@ jobs:
     steps:
       - name: Hola mundo
         run: echo "Hola mundo segundo"
+
+  tercy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: working outputs
+        id: step-outputs
+        run: echo "my_variable=hola a todos" >> $GITHUB_OUTPUT
+
+      - name: get outputs
+        run: echo ${{steps.step-outputs.outputs.my_variable}}
