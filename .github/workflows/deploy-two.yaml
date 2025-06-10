@@ -31,6 +31,8 @@ jobs:
 
   tercy-job:
     runs-on: ubuntu-latest
+    outputs:
+      salida: salida de tercy-job
     steps:
       - name: working outputs
         id: step-outputs
@@ -38,3 +40,12 @@ jobs:
 
       - name: get outputs
         run: echo ${{steps.step-outputs.outputs.my_variable}}
+
+  quarty-job:
+    needs: tercy-job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get outputs tercy job
+        id: step-outputs
+        run: echo ${{needs.tercy-job.outputs.salida}}
