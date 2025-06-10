@@ -59,7 +59,7 @@ jobs:
 
       - name: upload file artifact
         uses: action/upload-artifact@v4
-        whit:
+        with:
           name: archivo-test
           path: test.log
 
