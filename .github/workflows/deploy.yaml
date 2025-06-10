@@ -12,3 +12,4 @@ jobs:
       - run: echo "Correr migraciones"
       - run: echo "Generar binarios"
       - run: echo "Publicar Versiones"
+#

@@ -49,3 +49,25 @@ jobs:
       - name: get outputs tercy job
         id: step-outputs
         run: echo ${{needs.tercy-job.outputs.salida}}
+
+  quinto-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: generate file
+        run: echo "Archivo de prueba Hola mundo" >> test.log
+
+      - name: upload file artifact
+        uses: action/upload-artifact@v4
+        whit:
+          name: archivo-test
+          path: test.log
+
+  # quarty-job:
+  #   needs: tercy-job
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: get outputs tercy job
+  #       id: step-outputs
+  #       run: echo ${{needs.tercy-job.outputs.salida}}
